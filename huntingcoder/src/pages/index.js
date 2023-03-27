@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,13 +16,35 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* <Script src="/sc.js">
+
+      </Script> */}
+      <nav className={styles.mainNav}>
+        <ul>
+          <Link href='/'><li>Home</li></Link>
+          <Link href='/about'><li>About</li></Link>
+          <Link href='/blog'><li>Blog</li></Link>
+          <Link href='/contact'><li>Contact</li></Link>
+        </ul>
+      </nav>
       <main className={styles.main}>
         <div className={styles.center}>
           <h1>Hunting Coder</h1>
           <p>A blog hunting coders by hunting coders</p>
         </div>
-        <div>
-          
+        <div className="blogs">
+          <div className="blogItem">
+            <h1>How to learn javascript in 2023?</h1>
+            <Image
+              src={
+                "https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_960_720.jpg"
+              }
+              alt="this is a demo image"
+              width={600}
+              height={400}
+            />
+            <p>javascript is the language used to design and logic for web</p>
+          </div>
         </div>
       </main>
     </>
