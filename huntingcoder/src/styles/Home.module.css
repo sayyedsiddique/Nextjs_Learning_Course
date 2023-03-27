@@ -277,3 +277,18 @@
     transform: rotate(0deg);
   }
 }
+
+
+.mainNav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+.mainNav ul li{
+  font-weight: 600;
+  list-style: none;
+  margin: 0 1rem;
+}
