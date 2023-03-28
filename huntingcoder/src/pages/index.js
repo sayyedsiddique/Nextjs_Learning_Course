@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
+import Navbar from "../../components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,14 +20,7 @@ export default function Home() {
       {/* <Script src="/sc.js">
 
       </Script> */}
-      <nav className={styles.mainNav}>
-        <ul>
-          <Link href='/'><li>Home</li></Link>
-          <Link href='/about'><li>About</li></Link>
-          <Link href='/blog'><li>Blog</li></Link>
-          <Link href='/contact'><li>Contact</li></Link>
-        </ul>
-      </nav>
+      <Navbar />
       <main className={styles.main}>
         <div className={styles.center}>
           <h1>Hunting Coder</h1>

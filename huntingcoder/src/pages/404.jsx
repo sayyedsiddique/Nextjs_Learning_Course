@@ -1,26 +1,14 @@
 import Link from "next/link";
 import React from "react";
 import styles from "@/styles/Home.module.css";
+import { useRouter } from "next/router";
+import Navbar from '../../components/Navbar'
 
 const NotFoundPage = () => {
+  const router = useRouter()
   return (
     <div id="notfound">
-      <nav className={styles.mainNav}>
-        <ul>
-          <Link href="/">
-            <li>Home</li>
-          </Link>
-          <Link href="/about">
-            <li>About</li>
-          </Link>
-          <Link href="/blog">
-            <li>Blog</li>
-          </Link>
-          <Link href="/contact">
-            <li>Contact</li>
-          </Link>
-        </ul>
-      </nav>
+      <Navbar />
       <div className="notfound">
         <div className="notfound-404">
           <h1>404</h1>
@@ -30,7 +18,10 @@ const NotFoundPage = () => {
           The page you looking for might have been removed had its name changed
           or it temporarily unavailable.
         </p>
-        <a href="#">Back To Homepage</a>
+        <div className="home_btn" style={{ marginTop: "20px" }} onClick={() => router.push('/')}>
+          {/* <Link href="/">Back To Homepage</Link> */}
+          Back To Homepage
+        </div>
       </div>
     </div>
   );
