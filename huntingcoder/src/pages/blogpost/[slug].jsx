@@ -1,13 +1,21 @@
-import React from 'react'
-import { useRouter } from 'next/router'
+import React from "react";
+import { useRouter } from "next/router";
+import Navbar from "../../../components/Navbar";
 
-const Slug = () => {
-    const router = useRouter()
-    const {slug} = router.query
-    console.log(slug)
-  return (
-    <div>{slug}</div>
-  )
+export const getStaticPaths = async() => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
 }
 
-export default Slug
+const Slug = () => {
+  const router = useRouter();
+  const { pageno } = router.query;
+  console.log(pageno);
+  return (
+    <div>
+      <Navbar />
+      <h1>Hello Dynamic</h1>
+    </div>
+  );
+};
+
+export default Slug;
